@@ -1,0 +1,39 @@
+.header {
+    height: 70px;
+    display: flex;
+    background: rgb(235, 199, 232);
+    background: linear-gradient(90deg, rgba(235, 199, 232, 1) 0%, rgba(46, 2, 73, 1) 41%);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links {
+    font-size: 30px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: snow;
+    margin: 10px;
+
+}
+
+h1 {
+    font-size: 45px;
+}
+
+a > h1 {
+    color: black;
+}
+
+form button {
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 0 5px 5px 0;
+}
+
+form input {
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+}

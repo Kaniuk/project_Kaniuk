@@ -1,0 +1,6 @@
+.main {
+    background: rgb(100, 92, 170);
+    background: linear-gradient(90deg, rgba(100, 92, 170, 1) 0%, rgba(235, 199, 232, 1) 100%);
+    width: 80%;
+    margin: 0 auto;
+}

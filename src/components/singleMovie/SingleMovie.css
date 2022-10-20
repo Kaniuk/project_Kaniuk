@@ -1,0 +1,53 @@
+.single-movie-block {
+    display: flex;
+}
+
+.single-movie-right {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.right_first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right_second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-movie-genres {
+    font-size: 22px;
+    color: #371B58;
+    margin-bottom: 20px;
+}
+
+.single-movie-block img {
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.single-movie-companies {
+    font-size: 20px;
+    color: #5B4B8A;
+    margin-bottom: 20px;
+}
+
+.single-movie-right a {
+    color: #31E1F7;
+    font-size: 25px;
+}
+
+.single-movie-right a:hover {
+    color: #FFFFFF;
+}
+
+.back_button {
+    margin: 20px;
+    display: block;
+}
