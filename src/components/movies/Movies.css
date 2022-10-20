@@ -28,8 +28,8 @@ button:hover {
     border-radius: 50%;
     padding: 20px;
     position: fixed;
-    top: 700px;
-    right: 20px;
+    top: 1000px;
+    right: 80px;
     background: rgb(235, 199, 232);
     background: linear-gradient(20deg, rgba(235, 199, 232, 1) 0%, rgba(0, 0, 0, 1) 24%);
 }

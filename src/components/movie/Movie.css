@@ -10,7 +10,7 @@
     padding: 10px;
 }
 
-.movie > img {
+.movie a > img {
     width: 100%;
     max-width: 400px;
     height: auto;

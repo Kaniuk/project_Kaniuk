@@ -8,15 +8,15 @@ import './Movie.css';
 
 const Movie = ({movie}) => {
     const {title, overview, id, backdrop_path, release_date, popularity, vote_average} = movie;
+
     return (
         <div className="movie">
             <div className="description">
                 <h2>{title}</h2>
                 <h3>{overview}</h3>
             </div>
-            <img src={`${imageBaseURL}${backdrop_path}`} alt="backdrop"/>
             <Link to={`/movies/${id}`}>
-                <button>go to movie</button>
+                <img src={`${imageBaseURL}${backdrop_path}`} alt="backdrop"/>
             </Link>
             <div className="info">
                 <div>release:{release_date}</div>

@@ -13,12 +13,14 @@ const Movies = () => {
     const {page = 1} = useParams();
     const query = useQuery();
 
-    const genre = query.get('genre');
+    const genres = query.get('genres');
+
+    const liftUp = () => window.scrollTo(0, 0);
 
     useEffect(() => {
-        dispatch(moviesActions.getMovies({page, with_genres: genre}));
-        window.scrollTo(0, 0);
-    }, [page,genre]);
+        dispatch(moviesActions.getMovies({page, with_genres: genres}));
+        liftUp();
+    }, [page, genres]);
 
     return (
         <div>
@@ -35,7 +37,7 @@ const Movies = () => {
                 {page < total_pages && <Link to={`/movies/page-${+page + 1}`}>
                     <button>NEXT</button>
                 </Link>}
-                <button onClick={() => window.scrollTo(0, 0)} className="rounded_button">up</button>
+                <button onClick={() => liftUp()} className="rounded_button">up</button>
             </div>
         </div>
     );

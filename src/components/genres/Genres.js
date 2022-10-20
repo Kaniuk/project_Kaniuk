@@ -10,13 +10,17 @@ import {useQuery} from "../../hooks";
 const Genres = () => {
     const {genres} = useSelector((state) => state.genresReducer);
     const dispatch = useDispatch();
-    debugger
     const options = genres.map(({name, id}) => ({value: id, label: name}));
     const navigate = useNavigate();
     const query = useQuery();
 
-    const genreId = query.get('genre');
-    const selectedOption = options.find(({value}) => value == genreId);
+    let genreIds = query.get('genres');
+
+    let selectedOptions = [];
+    if (genreIds) {
+        genreIds = genreIds.split(',').map(id => +id);
+        selectedOptions = options.filter(({value}) => genreIds.includes(value));
+    }
 
 
     useEffect(() => {
@@ -24,10 +28,11 @@ const Genres = () => {
     }, []);
 
 
-    function handleChange(genreItem) {
+    function handleChange(genreItems) {
+        const selectedGenresIds = genreItems.map(({value}) => value);
         navigate({
             pathname: '/movies',
-            search: `?${createSearchParams({genre: genreItem.value})}`,
+            search: `?${createSearchParams({genres: selectedGenresIds.toString()})}`,
         });
     }
 
@@ -36,8 +41,9 @@ const Genres = () => {
 
         <div className="genres">
             <Select
+                isMulti
                 onChange={handleChange}
-                value={selectedOption}
+                value={selectedOptions}
                 options={options}
                 placeholder={'Choose genre'}
                 theme={(theme) => ({
