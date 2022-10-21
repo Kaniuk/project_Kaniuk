@@ -1,19 +1,22 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import ReactStars from "react-rating-stars-component/dist/react-stars";
+import {useSelector} from "react-redux";
 
 import {imageBaseURL} from "../../configs";
 import './Movie.css';
 
 
 const Movie = ({movie}) => {
-    const {title, overview, id, backdrop_path, release_date, popularity, vote_average} = movie;
+    const {genres} = useSelector(state => state.genresReducer);
+
+    const {title, id, backdrop_path, release_date, popularity, vote_average, genre_ids} = movie;
+    const movieGenre = genre_ids.map((id) => genres.find((genre) => id === genre.id));
 
     return (
         <div className="movie">
             <div className="description">
                 <h2>{title}</h2>
-                <h3>{overview}</h3>
             </div>
             <Link to={`/movies/${id}`}>
                 <img src={`${imageBaseURL}${backdrop_path}`} alt="backdrop"/>
@@ -26,8 +29,14 @@ const Movie = ({movie}) => {
                 </div>
                 <div>popularity:{popularity}</div>
             </div>
+            <div className="item">
+                {movieGenre.map(movie =>
+                    <div className="notify-badge" key={movie.id}>{movie.name}</div>
+                )
+                }</div>
         </div>
     );
 };
+
 
 export {Movie};

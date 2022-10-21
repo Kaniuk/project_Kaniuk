@@ -4,8 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import Select from "react-select";
 
 import {genresActions} from "../../redux/slices";
-import './Genres.css';
 import {useQuery} from "../../hooks";
+import './Genres.css';
 
 const Genres = () => {
     const {genres} = useSelector((state) => state.genresReducer);
