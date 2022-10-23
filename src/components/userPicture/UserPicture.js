@@ -1,5 +1,4 @@
 import React from 'react';
-import {findAllByDisplayValue} from "@testing-library/react";
 
 const UserPicture = (props) => (
     <svg viewBox="0 0 24 24" {...props}>

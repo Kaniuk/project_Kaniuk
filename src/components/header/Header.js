@@ -17,9 +17,11 @@ const Header = () => {
                     <NavLink to={'/home'}>Home</NavLink>
                     <NavLink to={'/movies'}>Movies</NavLink>
                 </div>
-                <UserPicture width={32} stroke="white" fill="darkgray"/>
                 <Genres/>
                 <AsyncSearch/>
+                <div>
+                    <UserPicture width={40} stroke="white" fill="darkgray"/>
+                </div>
             </header>
 
         </div>

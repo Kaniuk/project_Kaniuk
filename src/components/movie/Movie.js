@@ -32,8 +32,7 @@ const Movie = ({movie}) => {
             <div className="item">
                 {movieGenre.map(movie =>
                     <div className="notify-badge" key={movie.id}>{movie.name}</div>
-                )
-                }</div>
+                )}</div>
         </div>
     );
 };

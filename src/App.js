@@ -4,8 +4,7 @@ import styled, {ThemeProvider} from "styled-components";
 
 import {MainLayout} from "./layouts";
 import {Home, Movies, SingleMovie} from "./components";
-import {lightTheme, darkTheme, GlobalStyles} from "./themeSwitcher";
-
+import {lightTheme, darkTheme, GlobalStyles} from "./themeSwitcher/themeSwitcher";
 import './App.css';
 
 const StyledApp = styled.div`

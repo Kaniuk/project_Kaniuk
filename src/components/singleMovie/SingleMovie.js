@@ -37,7 +37,7 @@ const SingleMovie = () => {
                     </div>
                     <div className="single-movie-genres">
                         <div>genres:</div>
-                        {singleMovie.genres.map(genre => <div>{genre.name}</div>)}
+                        {singleMovie.genres.map(genre => <div key={genre.id}>{genre.name}</div>)}
                     </div>
                     <div className="single-movie-companies">
                         <div>production companies:</div>
@@ -47,9 +47,10 @@ const SingleMovie = () => {
                         <a href={singleMovie.homepage}>Homepage</a>
                     </div>
                     <div className="right_second">
-                        <h3 className="stars_rating">rating : <ReactStars activeColor="yellow" size={30} count={5}
-                                                                          value={singleMovie.vote_average / 2} isHalf>
-                        </ReactStars>
+                        <h3 className="stars_rating">rating :
+                            <ReactStars activeColor="yellow" size={30} count={5} value={singleMovie.vote_average / 2}
+                                        isHalf>
+                            </ReactStars>
                         </h3>
                         <div>release_date:{singleMovie.release_date}</div>
                         <div>runtime:{singleMovie.runtime}</div>
@@ -64,17 +65,3 @@ const SingleMovie = () => {
 
 export {SingleMovie};
 
-/*
-<div>
-    <div>
-        <img src={`${imageBaseURL}${singleMovie.poster_path}`} alt="poster_path"/>
-
-    </div>
-    <div>genres</div>
-    {singleMovie.genres.map(genre => genre.name)}
-    <div>
-        <div>
-            <a href={singleMovie.homepage}>Homepage</a>
-        </div>
-    </div>
-</div>*/
